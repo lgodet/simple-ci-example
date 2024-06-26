@@ -20,6 +20,6 @@ jobs:
         env:
           DEPLOY_KEY: ${{ secrets.MA_SECRET }}
         run: |
-          echo "VAR = ${{ vars.MA_VAR }} Secret = $DEPLOY_KEY"
+          echo "VAR = ${{ vars.MA_VAR }} Secret = $DEPLOY_KEY ${{ github.ref }} ${{ github.actor }}"
     
         
