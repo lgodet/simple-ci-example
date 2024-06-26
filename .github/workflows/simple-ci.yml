@@ -1,5 +1,8 @@
 name: Simple CI
 
+env:
+  VAR_INT: "variable interne"
+  
 on:
   push:
     branches:
@@ -20,6 +23,6 @@ jobs:
         env:
           DEPLOY_KEY: ${{ secrets.MA_SECRET }}
         run: |
-          echo "VAR = ${{ vars.MA_VAR }} Secret = $DEPLOY_KEY ${{ github.ref }} ${{ github.actor }}"
+          echo "VAR = ${{ vars.MA_VAR }} Secret = $DEPLOY_KEY ${{ github.ref }} ${{ github.actor }} $VAR_INT"
     
         
