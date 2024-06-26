@@ -1,5 +1,8 @@
 name: Simple CI
 
+env:
+  environment: TEST
+  
 on:
   push:
     branches:
