@@ -1,7 +1,7 @@
 name: Simple CI
 
 env:
-  environment: TEST
+  environment: "TEST"
   
 on:
   push:
@@ -20,7 +20,6 @@ jobs:
 
       - name: Deploy to server
         env:
-          NODE_ENV: TEST
           DEPLOY_KEY: ${{ secrets.MA_SECRET }}
         run: |
           echo "VAR = ${{ env.MA_VAR }} Secret = $DEPLOY_KEY"
