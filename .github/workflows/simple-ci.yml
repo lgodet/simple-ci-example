@@ -22,6 +22,6 @@ jobs:
         env:
           DEPLOY_KEY: ${{ secrets.MA_SECRET }}
         run: |
-          echo "VAR = $MA_VAR Secret = $DEPLOY_KEY"
+          echo "VAR = ${{ env.MA_VAR }} Secret = $DEPLOY_KEY"
     
         
