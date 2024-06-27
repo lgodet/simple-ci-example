@@ -15,7 +15,7 @@ jobs:
       contents: write
     environment: TEST
     
-    if: github.event_name == 'push'
+    if: github.event_name == 'pusah'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
