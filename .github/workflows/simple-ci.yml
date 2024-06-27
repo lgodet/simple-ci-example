@@ -22,7 +22,7 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - name: Affichage du repertoire avant checkout
-        run: pwd; 
+        run: pwd; echo $GITHUB_WORKSPACE
         
       - name: Checkout repository
         uses: actions/checkout@v4
