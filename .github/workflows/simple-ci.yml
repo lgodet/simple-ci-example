@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Affichage du fichier local release.txt du repo courant
-        run: cat release.txt
+        run: pwd; cat release.txt
         
       - name: Checkout repository action
         uses: actions/checkout@v4
