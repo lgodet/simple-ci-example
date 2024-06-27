@@ -32,6 +32,9 @@ jobs:
         with:
           repository: lgodet/action
           path: .
+
+      - name: Affichage du repertoire apres checkout action
+        run: pwd; 
         
       - name: Run my custom action
         uses: ./.github/actions/hello
