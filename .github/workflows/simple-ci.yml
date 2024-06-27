@@ -23,8 +23,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Affichage du fichier local release.txt du repo courant
+        run: cat release.txt
         
-      - name: Checkout repository
+      - name: Checkout repository action
         uses: actions/checkout@v4
         with:
           repository: lgodet/action
