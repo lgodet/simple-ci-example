@@ -8,7 +8,8 @@ on:
     branches:
       - main
     tags:
-      - '*'
+    - '*'
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,6 +23,8 @@ jobs:
 
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
+        with:
+          artifacts: "release.tar.gz,foo/*.txt"
 
       - name: Run an online script
         run: echo "hello world"
