@@ -23,7 +23,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
+      - name: Run my custom action
+        uses: ./.github/lgodet/node-ci-example
+        with:
+          name: "Action !!!"
+          
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with: 
