@@ -7,8 +7,6 @@ on:
   push:
     branches:
       - main
-    tags:
-    - '*'
     
 jobs:
   build:
@@ -21,10 +19,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Release
-        uses: ncipollo/release-action@v1.14.0
+      - uses: actions/github-script@v7
+        id: set-result
         with:
-          artifacts: "release.tar.gz,foo/*.txt"
+         script: return "Hello!"
+         result-encoding: string
+      - name: Get result
+        run: echo "${{steps.set-result.outputs.result}}"
 
       - name: Run an online script
         run: echo "hello world"
