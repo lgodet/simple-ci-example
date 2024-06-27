@@ -40,7 +40,7 @@ jobs:
         run: echo "File ${{ matrix.node-version }}" > test-file-${{ matrix.node-version }}.txt
 
       - name: Upload Artefact
-        uses: actions/uplaod-artefact@v3
+        uses: actions/upload-artefact@v3
         with:
           name: my-artefact ${{ matrix.node-version }}
           path: test-file-${{ matrix.node-version }}.txt
