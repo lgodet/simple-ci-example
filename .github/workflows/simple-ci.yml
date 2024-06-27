@@ -21,6 +21,9 @@ jobs:
     
     if: github.event_name == 'push'
     steps:
+      - name: Affichage du repertoire avant checkout
+        run: pwd; 
+        
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -32,9 +35,6 @@ jobs:
         with:
           repository: lgodet/action
           path: .
-
-      - name: Affichage du repertoire apres checkout action
-        run: pwd; 
         
       - name: Run my custom action
         uses: ./.github/actions/hello
