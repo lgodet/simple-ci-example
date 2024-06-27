@@ -23,11 +23,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          repository: lgodet/action
+          path: .
         
       - name: Run my custom action
-        uses: lgodet/action/tree/main/.github/actions/hello/action.yml@main
+        uses: ./.github/actions/hello
         with:
-          name: "Action !!!"
+          name_input: "Action !!!"
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
