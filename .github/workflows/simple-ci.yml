@@ -14,12 +14,27 @@ jobs:
     permissions:
       contents: write
     environment: TEST
+
+    strategy:
+      matrix:
+        node-version: [12, 14]
     
-    if: github.event_name == 'pusah'
+    if: github.event_name == 'push'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: ${{ matrix.node-version }}
+
+      - name: install dependencies
+        run: npm-install
+
+      - name: run test
+        run: npm test
+        
       - uses: actions/github-script@v7
         id: set-result
         with:
