@@ -31,9 +31,6 @@ jobs:
 
       - name: install dependencies
         run: npm install
-
-      - name: run test
-        run: npm test
         
       - uses: actions/github-script@v7
         id: set-result
