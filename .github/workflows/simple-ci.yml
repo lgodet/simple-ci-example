@@ -35,6 +35,15 @@ jobs:
       - name: test
         run: npm test 
         continue-on-error: true
+
+      - name: create a file
+        run: echo "File ${{ matrix.node-version }}" > test-file-${{ matrix.node-version }}.txt
+
+      - name: Upload Artefact
+        uses: actions/uplaod-artefact@v3
+        with:
+          name: my-artefact ${{ matrix.node-version }}
+          path: test-file-${{ matrix.node-version }}.txt
         
       - uses: actions/github-script@v7
         id: set-result
